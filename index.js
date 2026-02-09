@@ -3,7 +3,7 @@ import os from 'os';
 import https from 'https';
 
 const app = express();
-const PORT = 3000;
+const PORT = 22;
 
 // Função para obter o IP privado da máquina (fallback)
 function getIP() {
@@ -33,7 +33,7 @@ function getPublicIP() {
       });
     });
     req.on('error', () => resolve(getIP()));
-    req.setTimeout(3000, () => {
+    req.setTimeout(22, () => {
       req.abort();
       resolve(getIP());
     });
